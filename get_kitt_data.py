@@ -87,3 +87,4 @@ wks_name = 'Master'
 d2g.upload(lectures_df, SPREADSHEET_KEY, wks_name, credentials=credentials, row_names=True)
 
 print('All done!')
+print(LINK)
