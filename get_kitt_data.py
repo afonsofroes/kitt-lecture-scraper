@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from selenium.webdriver.common.by import By
 from params import *
 from selenium import webdriver
-import os
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from df2gspread import df2gspread as d2g
