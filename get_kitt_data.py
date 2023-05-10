@@ -35,9 +35,7 @@ html = browser.page_source
 soup = BeautifulSoup(html, 'html.parser')
 
 titles = soup.find_all('h3', class_='lecture-title')
-titles = [title.text for title in titles]
-titles = [title.replace('\n', '').strip() for title in titles]
-titles = [title.split('        ')[0] for title in titles]
+titles = [title.text.replace('\n', '').strip().split('        ')[0] for title in titles]
 links_soup = soup.find_all('a', class_='lecture-card-link')
 links =['https://kitt.lewagon.com' + link_soup.get('href') for link_soup in links_soup]
 
