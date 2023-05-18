@@ -8,6 +8,9 @@ from oauth2client.service_account import ServiceAccountCredentials
 from df2gspread import df2gspread as d2g
 from getpass import getpass
 
+user = input('Github login: ')
+password = getpass('Github password: ')
+
 browser = webdriver.Chrome()
 
 # Load the login page
@@ -15,14 +18,14 @@ browser.get('https://kitt.lewagon.com/users/sign_in')
 
 # Click the login with github button
 login_button = browser.find_element(By.XPATH , '//a[@href="/users/auth/github?type=student"]')
-login_button.click()
+login_button.click(user)
 
 # Fill in the login form
 login = browser.find_element(By.XPATH , '//input[@id="login_field"]')
-login.send_keys(input('Github login: '))
+login.send_keys(password)
 
 password = browser.find_element(By.XPATH , '//input[@id="password"]')
-password.send_keys(getpass('Github password: '))
+password.send_keys()
 
 submit = browser.find_element(By.XPATH , '//input[@name="commit"]')
 submit.click()
