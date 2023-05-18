@@ -1,0 +1,1 @@
+Just need to add the path to a Google Cloud project access JSON to the directory in the .env file, and then copy the spreadsheet key of the target Google Sheet from its URL. The Google Sheet must be shared with the service email address in the JSON file.
