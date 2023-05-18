@@ -6,6 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from oauth2client.service_account import ServiceAccountCredentials
 from df2gspread import df2gspread as d2g
+from getpass import getpass
 
 browser = webdriver.Chrome()
 
@@ -18,10 +19,10 @@ login_button.click()
 
 # Fill in the login form
 login = browser.find_element(By.XPATH , '//input[@id="login_field"]')
-login.send_keys(USER)
+login.send_keys(input('Github login: '))
 
 password = browser.find_element(By.XPATH , '//input[@id="password"]')
-password.send_keys(PASSWORD)
+password.send_keys(getpass('Github password: '))
 
 submit = browser.find_element(By.XPATH , '//input[@name="commit"]')
 submit.click()
