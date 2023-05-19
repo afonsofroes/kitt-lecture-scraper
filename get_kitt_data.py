@@ -18,14 +18,14 @@ browser.get('https://kitt.lewagon.com/users/sign_in')
 
 # Click the login with github button
 login_button = browser.find_element(By.XPATH , '//a[@href="/users/auth/github?type=student"]')
-login_button.click(user)
+login_button.click()
 
 # Fill in the login form
 login = browser.find_element(By.XPATH , '//input[@id="login_field"]')
-login.send_keys(password)
+login.send_keys(user)
 
 password = browser.find_element(By.XPATH , '//input[@id="password"]')
-password.send_keys()
+password.send_keys(password)
 
 submit = browser.find_element(By.XPATH , '//input[@name="commit"]')
 submit.click()
